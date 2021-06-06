@@ -18,9 +18,9 @@ const main = async() => {
 
     const tareasDB = leerDB();
     if (tareasDB){
-        //establecer tareas
+        tareas.cargarTareasFromArray(tareasDB);
     }
-    await pausa();
+   
 
     do {
   opt = await  inquirerMenu();
