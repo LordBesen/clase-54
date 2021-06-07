@@ -43,6 +43,23 @@ class Tareas {
 
     }
 
+    listadoCompleto()  {
+       this.listadoArr.forEach((tarea,i)=>{
+       
+       const idx = i +1;
+       const {desc, completadoEn} = tarea;
+       const estado = (completadoEn) 
+                            ? 'Completada'
+                            : 'Pendiente'
+       
+        console.log(`${idx} ${desc} ${estado}`);
+
+
+       });
+      
+
+    }
+
 
 }
 
