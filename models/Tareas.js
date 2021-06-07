@@ -2,7 +2,10 @@ const Tarea = require('./Tarea');
 
 class Tareas {
 
-    _listado = {};
+    _listado = {
+
+
+    };
 
 
     get listadoArr() {
@@ -24,6 +27,12 @@ class Tareas {
         this._listado = {};
     }
 
+    borrarTarea (id = '') {
+
+        if (this._listado(id)) {
+            delete this._listado(id);
+        }
+    }
 
     cargarTareasFromArray( tareas = []){
 
@@ -61,7 +70,67 @@ class Tareas {
     }
 
 
+    listarCompletadas()  {
+        this.listadoArr.forEach((tarea,i)=>{
+        
+        const idx = i +1;
+        const {desc, completadoEn} = tarea;
+        const estado = (completadoEn) 
+                             ? console.log(`${idx} ${desc} ${completadoEn}`)
+                             : 'Pendiente'
+        
+         
+ 
+ 
+        });
+       
+ 
+     }
+ 
+     
+
+
+    
+
+    listarPendientes()  {
+        this.listadoArr.forEach((tarea,i)=>{
+       
+            const idx = i +1;
+            const {desc, completadoEn} = tarea;
+            const estado = (completadoEn) 
+             if (completadoEn){
+
+                console.log('')
+             }  else {
+                
+                console.log(`${idx} ${desc} ${'Pendiente'}`);
+             }                                                                   
+
+                            
+            
+             
+     
+     
+            });
+           
+     
+         }
+     
+         
+ 
+     
+
+
+    
+
+
 }
+
+
+    
+
+
+
 
 
 module.exports = Tareas;
