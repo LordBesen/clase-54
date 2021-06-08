@@ -1,17 +1,25 @@
 {
-  "name": "04-Aplicacion-consola",
+  "name": "05-clima-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Aplicacion de clima",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "test",
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordBesen/clase-54.git"
+  },
+  "author": "Federico Besenzoni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LordBesen/clase-54/issues"
+  },
+  "homepage": "https://github.com/LordBesen/clase-54#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "colors": "^1.4.0",
-    "inquirer": "^8.1.0",
-    "uuid": "^8.3.2"
+    "inquirer": "^8.1.0"
   }
 }
