@@ -13,7 +13,7 @@ class Busquedas {
 
     get paramsMapbox() {
         return {
-            'access_token': 'pk.eyJ1IjoiYmVzZW4iLCJhIjoiY2twb202OTN0Mm0wZTJwbXd4N3JrMTl2aCJ9.AZ07E8HaGf0oh2FExaPIqA',
+            'access_token': process.env.MAPBOX_KEY,
             'limit': 5,
             'Language': 'es'
         }
@@ -30,10 +30,21 @@ class Busquedas {
 
             });
             const resp = await instance.get();
+          // console.log(resp.data.features);
+          
+            return resp.data.features.map( lugar => ({
+                
+                id: lugar.id,
+                nombre:lugar.place_name,
+                lng:lugar.center[0],
+                lat:lugar.center[1],
+
+
+            }));
         
        
-        console.log(resp.data);
-        return []; // regresar resultados
+        // return []; // regresar resultados
+        
     } catch (error) {
 
         console.log(error);
